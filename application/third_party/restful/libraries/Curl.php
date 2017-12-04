@@ -315,6 +315,8 @@ class Curl {
         echo "</pre>";
     }
 
+
+
     public function debug_request() {
         return array(
             'url' => $this->url
