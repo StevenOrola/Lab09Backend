@@ -21,25 +21,32 @@ class Job extends Rest_Controller {
                 $this->response(array('error' => 'Todo item not found!'), 404);
         }
     }
-
-    // Handle an incoming PUT - update a todo item
+        // Handle an incoming PUT - update a todo item
     function index_put($key = null) {
         $record = array_merge(array('id' => $key), $this->_put_args);
         $this->tasks->update($record);
         $this->response(array('ok'), 200);
     }
 
-    // Handle an incoming POST - add a new todo item
+
+
+        // Handle an incoming POST - add a new todo item
     function index_post($key = null) {
         $record = array_merge(array('id' => $key), $_POST);
         $this->tasks->add($record);
         $this->response(array('ok'), 200);
     }
 
-    // Handle an incoming DELETE - delete a todo item
+
+
+
+
+        // Handle an incoming DELETE - delete a todo item
     function index_delete($key = null) {
         $this->tasks->delete($key);
         $this->response(array('ok'), 200);
     }
+
+
 
 }
